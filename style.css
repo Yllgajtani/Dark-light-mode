@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+body {
+    padding: 25px;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+    transition: background-color 0.5s ease, color 0.5s ease;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    color: #333;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: background 0.5s ease;
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(145deg, #0066cc, #003399);
+    color: white;
+    transition: background 0.3s ease, transform 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+button i {
+    margin-right: 8px;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.15);
+    transition: all 0.5s;
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+}
+
+button:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+.dark-mode {
+    background: #333;
+    color: #f0f0f0;
+}
+
+.dark-mode .container {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode button {
+    background: linear-gradient(145deg, #555, #333);
+}
+
+.dark-mode button:hover::before {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.dark-mode button:hover {
+    background: linear-gradient(145deg, #666, #444);
+}
